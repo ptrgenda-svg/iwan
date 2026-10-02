@@ -1,5 +1,5 @@
 // ==============================================
-// GANTI DENGAN TAUTAN DARI GOOGLE APPS SCRIPT ANDA
+// arfcode
 // ==============================================
 const URL_KIRIM = 'https://script.google.com/macros/s/AKfycbwENyAaFCQFs_96Tll_Sn7mQVvK0nfRpgBXNQzXrjQiVGdqxakk6V80meR4H4x3pFbsNA/exec';
 // ==============================================
