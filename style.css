@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --netflix-red: #e50914;
+    --error-red: #e50914;
+}
+
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/ab1fe332-993a-44d1-b60b-cd4f8d11b96e/web/US-en-20260928-TRIFECTA-perspective_0d8a66b9-9fa8-495e-a397-736f32e0c00a_large.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+}
+
+footer {
+    position: relative;
+    z-index: 50;
+    padding: 30px 20px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: auto;
+}
+
+.popup-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.popup-screen.hidden {
+    display: none;
+}
+
+.popup-box {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 60px 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.popup-title img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.popup-extra-text {
+    color: #b3b3b3;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.popup-subtitle {
+    color: #e0e0e0;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.row-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.label-left {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.label-left.red {
+    color: var(--netflix-red);
+}
+
+.logo-row img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain; 
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b0b0b0;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    font-size: 1rem;
+}
+
+.input-wrap input:focus + label,
+.input-wrap input:not(:placeholder-shown) + label {
+    top: 10px;
+    transform: translateY(0);
+    font-size: 0.7rem;
+}
+
+.input-wrap input {
+    width: 100%;
+    padding: 20px 15px 8px;
+    background: rgba(51, 51, 51, 0.7);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.input-wrap input:focus {
+    background: rgba(69, 69, 69, 0.8);
+}
+
+.input-wrap input.error {
+    border-color: var(--error-red);
+}
+
+.error-text {
+    color: var(--error-red);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.input-wrap input.error + .error-text {
+    display: block;
+}
+
+.input-relative {
+    position: relative;
+}
+
+.side-logo {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    display: none;
+}
+
+.input-relative.has-logo input {
+    padding-right: 45px;
+}
+
+.two-col {
+    display: flex;
+    gap: 15px;
+}
+
+.two-col .input-group {
+    flex: 1;
+}
+
+.text-center-note {
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    margin: 15px 0 20px;
+}
+
+.btn-red {
+    width: 100%;
+    padding: 14px;
+    background: var(--netflix-red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-red:hover {
+    background: #f40612;
+}
+
+@media (max-width: 768px) {
+    header { padding: 15px 20px; }
+    .logo-img { height: 32px; }
+    .popup-box { padding: 40px 25px; }
+    .two-col { flex-direction: column; }
+}
